@@ -37,7 +37,7 @@ public class ConsoleGame {
             System.out.printf("Dealer's hand: %s.%n", dealer);
             int comparison = player.compareTo(dealer);
             if (comparison < 0) {
-              System.out.printf("You lost $&d!%n", bet);
+              System.out.printf("You lost $%d!%n", bet);
               pot -= bet;
             } else if (comparison > 0) {
               System.out.printf("You won $%d!%n", bet);
