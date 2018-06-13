@@ -26,6 +26,7 @@ public class ConsoleGame {
             }
           }
           scanner.nextLine();
+        }
           if (bet > 0) {
             deck.shuffle(rng);
             BlackjackHand dealer = new BlackjackDealerHand(deck);
@@ -42,6 +43,9 @@ public class ConsoleGame {
             } else if (comparison > 0) {
               System.out.printf("You won $%d!%n", bet);
               pot += bet;
+            } else if (comparison == 0 && dealer.isBlackjack()){
+              System.out.printf("You lost $%d!%n", bet);
+              pot -= bet;
             } else {
               System.out.printf("Push!%n");
             }
@@ -54,4 +58,4 @@ public class ConsoleGame {
     }
   }
 
-}
+
